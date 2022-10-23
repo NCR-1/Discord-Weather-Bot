@@ -1,2 +1,3 @@
 # Discord-Weather-Bot
-Simple discord bot to get weather report and schedule weather notifications using OpenWeather API
+
+Discord bot to get weather report and schedule weather notifications using OpenWeather API
