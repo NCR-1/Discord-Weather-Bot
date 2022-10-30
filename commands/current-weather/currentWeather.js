@@ -6,22 +6,12 @@ import fetchCurrentWeather from './fetchCurrentWeather.js';
 // Access to variables inside dotenv as environment variables
 dotenv.config();
 
-// Create a new client instance
-const client = new Client({
-	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.MessageContent,
-	],
-});
-
 // Function to get current weather information for a single location
 async function currentWeather(message) {
 	try {
 		const msg = message.content.toLowerCase();
 		// Split input text to get location word only
-		const location = splitText(msg);
+		const location = splitText(msg).toString().replace(/,/g, ' ');
 
 		// Get weather info using openweathermap api
 		const weatherInfo = await fetchCurrentWeather(location);
